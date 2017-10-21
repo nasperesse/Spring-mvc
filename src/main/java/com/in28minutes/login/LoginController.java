@@ -22,9 +22,9 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String handleUserLogin(ModelMap model, @RequestParam String name,
-			@RequestParam String password) {
-		if (!loginService.validateUser(name, password)) {
-			model.put("errorMessage", "Invalid Credentials");
+			@RequestParam String pass) {
+		if (!loginService.validateUser(name, pass)) {
+			model.put("errorMessage", "Nom d' utilisateur ou mot de passe incorrect");
 			return "login";
 		}
 		model.put("name", name);

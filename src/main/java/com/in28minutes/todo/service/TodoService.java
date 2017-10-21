@@ -40,4 +40,22 @@ public class TodoService {
 				todos.remove(todo);
 		}
 	}
+	
+	public Todo retrieveTodoById(int id) {
+		
+		for (Todo todo : todos) {
+			if (todo.getId() == id) {
+				return todo;
+			}
+	
+		}
+		return null;
+	}
+	
+	
+	public void updateTodo(Todo todo) {
+		todos.remove(todo);
+		todos.add(todo);
+		
+	}
 }
