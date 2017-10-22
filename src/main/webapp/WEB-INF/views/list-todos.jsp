@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
@@ -12,6 +13,7 @@
 <H1>Your Todos</H1>
 
 
+
 <p>Your Todo are:</p>
 
 <table class="table table-striped">
@@ -20,7 +22,7 @@
 <th>ID</th>
 <th>Beschreibung</th>
 <th>Name</th>
-<th></th>
+<th>Date</th>
 
 </tr>
 
@@ -32,7 +34,9 @@
 <td> ${todo.id}</td>
 <td> ${todo.desc}</td>
 <td>${todo.user}</td>
-<td><a href="/delete-todo?id=${todo.id}" class="btn btn-danger">Delete</a></td>
+<td><fmt:formatDate pattern="dd/MM/YYYY" value="${todo.targetDate}"/></td>
+<td><a href="/delete-todo?id=${todo.id}" class="btn btn-danger">Delete</a> 
+<a href="/update-todo?id=${todo.id}" class="btn btn-success">Update</a></td>
 
 
 </tr>

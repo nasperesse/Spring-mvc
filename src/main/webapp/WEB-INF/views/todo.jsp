@@ -8,12 +8,18 @@
 </head>
 <body>
 <div class="container">
-    <form:form action="/add-todo" method="POST" commandName="todo">
+    <form:form method="POST" commandName="todo">
     
     <fieldset class="form-group">
+       <form:hidden path="id"/>
        <form:label path="desc">Description</form:label> 
        <form:input path="desc" type="text" class="form-control" required="required"/> 
        <form:errors path="desc" cssClass="text-Warning"></form:errors>
+
+    <fieldset class="form-group">
+       <form:label path="targetDate">Target Date</form:label> 
+       <form:input path="targetDate" type="text" class="form-control" required="required"/> 
+       <form:errors path="targetDate" cssClass="text-Warning"></form:errors>
      </fieldset>
      
      <input class="btn btn-success" type="submit" value="add" />
